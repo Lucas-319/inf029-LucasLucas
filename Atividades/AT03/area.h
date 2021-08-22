@@ -1,0 +1,1 @@
+int area_retangulo (int b, int h);
