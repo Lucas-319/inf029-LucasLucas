@@ -2,42 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-
-typedef struct{
-
-   int dia, mes, ano; 
-
-}DataNas;
-
-typedef struct{
-
- char nome[100];
- char sexo;
- char cpf[25];
- DataNas datanascimento;
-
-}Pessoa; 
-
-Pessoa cadastrarCliente(){
-
-  Pessoa cliente;
-    
-  printf("Informe seu nome: ");
-  fgets(cliente.nome, 100, stdin);
-    
-  printf("Digite |M| ou |F| ou |O| para o sexo: ");
-  scanf(" %c", &cliente.sexo);
-
-  fflush(stdin);   
-  
-  printf("Digite seu CPF: ");
-  fgets( cliente.cpf, 25, stdin);
-
-  printf("Informe sua data de nascimento (dd/mm/aaaa): ");
-  scanf("%d %d %d", &cliente.datanascimento.dia, &cliente.datanascimento.mes, &cliente.datanascimento.ano);
-
-  return cliente;
-}
+#include "header.h"
 
 int validarNome(Pessoa teste){
     
@@ -82,7 +47,6 @@ int validarNome(Pessoa teste){
       return 1;        
     }
 }
-
 
 char validarSexo(Pessoa teste02){    
   
@@ -182,59 +146,4 @@ int validarNascimento(Pessoa teste04){
   
 
   return aux;
-}
-
-
-void imprimir(Pessoa p){
-
-  int nome;
-  char sexo;
-  int cpf;
-  int data;
-  
-  printf("\n");
-
-//VALIDAR NOME
-  nome = validarNome(p);
-  if(nome != 0)  
-    printf("\tNome: %s", p.nome);
-  else
-    printf("\tNome: invalido!\n");
-
-//VALIDAR SEXO 
-  sexo = validarSexo(p);    
-  if(sexo != 'n')  
-    printf("\tSexo: %c\n", p.sexo);
-  else
-    printf("\tSexo: invalido!\n");
-
-//VALIDAR CPF
-  cpf = validarCPF(p);
-  if(cpf != 0)
-   printf("\tCPF: %s", p.cpf);
-  else 
-   printf("\tCPF: invalido!\n"); 
-
-//VALIDAR DATA
-  data = validarNascimento(p);
-  if(data != 0)
-    printf("\tData Nascimento: %d/%d/%d\n", p.datanascimento.dia, p.datanascimento.mes, p.datanascimento.ano);
-  else  
-    printf("\tData Nascimento: invalida!\n");
-
-//CONFERE SE O CADASTRO FUI CONCLUIDO COM SUCESSO
-  if(nome != 0 && sexo != 'n' && cpf != 0 && data != 0)
-    printf("\nCadastro realizado com sucesso!\n");
-  else  
-    printf("\nNao foi possivel concluir seu cadastro!\n");    
-}
-
-int main() {
-
-  Pessoa cadastro1;
-  
-  cadastro1 = cadastrarCliente();
-  imprimir(cadastro1);
- 
-  return 0;                      
 }

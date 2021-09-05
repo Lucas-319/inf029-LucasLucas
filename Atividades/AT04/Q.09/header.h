@@ -19,7 +19,7 @@ int validarNome(Pessoa teste);
 
 char validarSexo(Pessoa teste02);
 
-char validarCPF(Pessoa teste03);
+int validarCPF(Pessoa teste03);
 
 int validarNascimento(Pessoa teste04);
 

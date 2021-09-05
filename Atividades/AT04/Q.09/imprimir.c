@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "01-header.h"
+#include "header.h"
 
 void imprimir(Pessoa p){
 
@@ -18,28 +18,28 @@ void imprimir(Pessoa p){
   if(nome != 0)  
     printf("\tNome: %s", p.nome);
   else
-    printf("\tNome: Nome inserido ultrapassa o limite de caracteres!\n");
+    printf("\tNome: invalido!\n");
 
 //VALIDAR SEXO 
   sexo = validarSexo(p);    
   if(sexo != 'n')  
     printf("\tSexo: %c\n", p.sexo);
   else
-    printf("\tSexo: Sexo digitado eh invalido!\n");
+    printf("\tSexo: invalido!\n");
 
 //VALIDAR CPF
   cpf = validarCPF(p);
   if(cpf != 0)
    printf("\tCPF: %s", p.cpf);
   else 
-   printf("\tCPF: CPF digitado eh invalido!\n"); 
+   printf("\tCPF: invalido!\n"); 
 
 //VALIDAR DATA
   data = validarNascimento(p);
   if(data != 0)
     printf("\tData Nascimento: %d/%d/%d\n", p.datanascimento.dia, p.datanascimento.mes, p.datanascimento.ano);
   else  
-    printf("\tData Nascimento: Data de nascimento invalida!\n");
+    printf("\tData Nascimento: invalida!\n");
 
 
   if(nome != 0 && sexo != 'n' && cpf != 0 && data != 0)
