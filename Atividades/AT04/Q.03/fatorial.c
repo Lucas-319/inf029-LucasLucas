@@ -7,7 +7,7 @@ int fatorial(int x){
 
   fat = 1;
 
-   if(x < 13){
+   if(x >= 0){
       for(int i=x; i>1; i--)
         fat = fat*i;
         return fat;        
@@ -15,7 +15,8 @@ int fatorial(int x){
      return 0;
 }
 int main(){
-    int n, fat;
+    int n, fat; 
+    
     
     printf("Por gentileza, informe o valor de n: ");
     scanf("%d", &n);
@@ -25,5 +26,6 @@ int main(){
   if(fat != 0)
     printf("O fatorial de %d eh: %d.", n, fat);
   else
+ 
     printf("Nao eh possivel calcular o fatorial de %d!", n);      
 }
