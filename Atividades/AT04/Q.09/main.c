@@ -9,7 +9,6 @@ int main() {
   Pessoa cadastro1;
   
   cadastro1 = cadastrarCliente();
-  imprimir(cadastro1);
- 
+  
   return 0;                      
 }
