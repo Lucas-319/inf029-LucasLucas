@@ -15,7 +15,8 @@ Pessoa cadastrarCliente(){
   printf("Digite |M| ou |F| ou |O| para o sexo: ");
   scanf(" %c", &cliente.sexo);
 
-  fflush(stdin);   
+  fflush(stdin);
+  //getchar();   
   
   printf("Digite seu CPF: ");
   fgets(cliente.cpf, 25, stdin);
